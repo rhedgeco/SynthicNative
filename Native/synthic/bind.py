@@ -29,7 +29,7 @@ def reload_editor_plugin():
     if unity_plugin_dir.exists():
         shutil.rmtree(unity_plugin_dir)
     unity_plugin_dir.mkdir(parents=True, exist_ok=True)
-    random_id = str(randint(0, 99999999)).rjust(8, "0")
+    random_id = str(randint(0, 9999)).rjust(4, "0")
     lib_dll = release_dir.joinpath("synthic.dll")
     unity_dll = unity_plugin_dir.joinpath(f"synthic-{random_id}.dll")
     lib_so = release_dir.joinpath("libsynthic.so")

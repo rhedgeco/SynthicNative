@@ -1,0 +1,3 @@
+[submodule "Native/polygen"]
+	path = Native/polygen
+	url = https://github.com/rhedgeco/polygen.git

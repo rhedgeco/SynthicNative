@@ -1,14 +1,13 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use polygen::polygen;
+
+#[polygen]
+pub struct SynthicEngine {
+    item: u32,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+#[polygen]
+impl SynthicEngine {
+    pub fn new() -> Self {
+        Self { item: 42 }
     }
 }

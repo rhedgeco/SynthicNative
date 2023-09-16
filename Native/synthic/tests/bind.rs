@@ -2,6 +2,7 @@ use std::{fs, path::PathBuf};
 
 use polygen::PolyBag;
 use polygen_csharp::CSharpRenderer;
+use synthic::SynthicEngine;
 
 static OUTPUT_DIR: &str = "target/polygen";
 
@@ -14,7 +15,7 @@ fn bind() {
     }
 
     // create the PolyBag
-    let bag = PolyBag::new("Native");
+    let bag = PolyBag::new("Native").register_impl::<SynthicEngine>();
 
     // render the csharp data to a file
     fs::create_dir_all(OUTPUT_DIR).unwrap();
